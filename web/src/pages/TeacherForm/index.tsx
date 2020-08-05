@@ -24,13 +24,13 @@ const TeacherForm: React.FC = () => {
   const [cost, setCost] = useState(''); 
 
   const [scheduleItems, setScheduleItems] = useState([
-    {week_day: 0, from:'', to:''}
+    {week_day: 0, from: '', to: ''}
   ]);
 
   function addNewScheduleItem() {
     setScheduleItems([
       ...scheduleItems,
-      {week_day: 0, from:'', to:''}
+      {week_day: 0, from: '', to: ''}
     ]);
   }
 
