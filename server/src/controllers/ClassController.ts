@@ -10,6 +10,7 @@ export interface ScheduleItem {
 
 class ClassController {
     async index(req: Request, res: Response){
+        console.log("NEW REQUEST")
         const filters = req.query;
 
         const time = filters.time as string;

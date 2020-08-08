@@ -5,7 +5,6 @@ import ConnectionsController from './controllers/ConnectionsController';
 
 const routes = express.Router();
 
-
 routes.get('/classes', ClassController.index);
 routes.post('/classes', ClassController.store);
 

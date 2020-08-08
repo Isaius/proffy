@@ -34,7 +34,8 @@ const StudyTabs: React.FC = () => {
             inactiveBackgroundColor: '#fafafc',
             activeBackgroundColor: '#ebebf5',
             inactiveTintColor: '#c1bccc',
-            activeTintColor: '#32265d'
+            activeTintColor: '#32265d',
+            keyboardHidesTabBar: true
         }}
     >
         <Screen 

@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Image, Text, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
 
 
@@ -11,10 +11,17 @@ import heartIcon from '../../assets/images/icons/heart.png';
 
 
 import styles from './styles';
+import api from '../../services/api';
 
 const Landing: React.FC = () => {
   const navigation = useNavigation();
+  const [totalConnections, setTotalConnections] = useState(0);
 
+  useFocusEffect(() => {
+    api.get('/connections').then(response => {
+      setTotalConnections(response.data.total);
+    });
+  });
   function handleNavigateToGiveClassesPage() {
     navigation.navigate('GiveClasses');
   }
@@ -56,7 +63,7 @@ const Landing: React.FC = () => {
       </View>
 
       <Text style={styles.totalConnections} > 
-        Total de 233 conexões já realizadas {'  '}
+        Total de { totalConnections } conexões já realizadas {'  '}
         <Image source={heartIcon} />
       </Text>
     </View>
