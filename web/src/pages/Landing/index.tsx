@@ -42,6 +42,11 @@ const Landing: React.FC = () => {
                     <img src={giveClassesIcon} alt="Dar aulas" />
                     Dar aulas
                   </Link>
+
+                  <Link to="/chat" className="give-classes">
+                    <img src={giveClassesIcon} alt="Chat" />
+                    Chat
+                  </Link>
               </div>
 
               <span className="total-connections">
